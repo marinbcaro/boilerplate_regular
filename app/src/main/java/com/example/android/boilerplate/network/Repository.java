@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import io.reactivex.Observable;
+import retrofit2.Call;
 
 /**
  * Created by carolinamarin on 2/3/18.
@@ -20,7 +20,7 @@ public class Repository {
         this.githubInterface = githubInterface;
     }
 
-    public Observable<List<GitRepo>> getListItems(String username){
+    public Call<List<GitRepo>> getListItems(String username){
         return githubInterface.getRepository(username);
     }
 }
